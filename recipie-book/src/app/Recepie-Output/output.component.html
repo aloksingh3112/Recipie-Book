@@ -1,0 +1,108 @@
+<div class='output-row'>
+   
+  <div class='output-first' *ngIf="Condition==0 ||Condition==undefined">
+    <h1>This is a Recipe App</h1>
+    <h2>You can record your recipes here</h2>
+    <h3>All your recipes are stored in your store here and
+      <br> any changes you make will remain saved as long as you
+      <br>continue to access this page from the same browser.</h3>
+    <h3>Built by
+      <cite>Alok</cite>
+
+
+    </h3>
+
+  </div>
+
+
+
+  <div class='output-second' *ngIf='Condition==1'>
+    <input type='text' class='output-text' placeholder="recepie" [(ngModel)]='textBox' />
+    <br>
+    <textarea class='output-textarea' cols="30" rows="10" placeholder="ingredient" [(ngModel)]='textArea'></textarea>
+    <br>
+
+    <button class='output-submit' (click)='submitData()' [disabled]="textArea==''||textBox==''">Submit Recipie</button>
+    <br>
+    <button class='output-cancel' (click)='cancelData()'>Cancel</button>
+
+  </div>
+
+
+  <div class='third' *ngIf="Condition==10" >
+    <div class='output-third' *ngFor="let list of ListArray;let i=index">
+      <div class='row'>
+        <h2 class='third-item' [textContent]='list.text'></h2>
+        <div class='third-button'>
+          <button class='third-button1'  (click)="doEdit($event)">Edit</button>
+          <button class='third-button2' (click)='doDelete($event)'>Delete</button>
+        </div>
+      </div>
+      <hr>
+      <div class="third-material">
+        <h2 class='third-incd'>Incredient:</h2>
+        <p class='third-content'[textContent]='list.desc'></p>
+
+      </div>
+      <div class='second-inner' *ngIf='editCondition'>
+           <h3 class='edit-title'>Edit Title:</h3>
+           <input type='text' class='edit-input' [(ngModel)]='inputText'/>
+           <h3 class='edit-incd'>Edit Incredient:</h3>
+          <textarea  cols="80" rows="5" class='edit-textarea' [(ngModel)]='textareaText' ></textarea>
+          <br>
+          <br>
+          <button class='edit-submit' (click)='doSubmit()'>Submit</button>
+          <button class='edit-cancel'(click)='doCancel()'>Cancel</button>
+          
+
+        </div>
+    
+    </div>
+     
+    
+  </div>
+  
+
+  <!-- fourth section -->
+  <div class='third' *ngIf="Condition==2" >
+    <div class='output-third' *ngFor="let show of showArr;let i=index">
+      <div class='row'>
+        <h2 class='third-item' [textContent]='show.text'></h2>
+        <div class='third-button'>
+          
+          <button class='third-button2' [value]='i' (click)='doShowDelete($event)'>Delete</button>
+        </div>
+      </div>
+      <hr>
+      <div class="third-material">
+        <h2 class='third-incd'>Incredient:</h2>
+        <p class='third-content'[textContent]='show.desc'></p>
+
+      </div>
+      <div class='second-inner' *ngIf='editCondition==20'>
+           <h3 class='edit-title'>Edit Title:</h3>
+           <input type='text' class='edit-input' [(ngModel)]='inputText'/>
+           <h3 class='edit-incd'>Edit Incredient:</h3>
+          <textarea  cols="80" rows="5" class='edit-textarea' [(ngModel)]='textareaText' ></textarea>
+          <br>
+          <br>
+          <button class='edit-submit' (click)='doSubmit()'>Submit</button>
+          <button class='edit-cancel'(click)='doCancel()'>Cancel</button>
+          
+
+        </div>
+    
+    </div>
+     
+    
+  </div>
+
+
+
+
+
+ 
+
+
+
+</div>

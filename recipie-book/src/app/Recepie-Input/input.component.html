@@ -1,0 +1,21 @@
+<div class='input-row'>
+  <div class='input-section'>
+    <h3>Recipe Box</h3>
+
+    <button class='input-add' value='1' (click)='buttonClick($event)'>Add a New Recipe</button>
+
+    <button class='input-show'  (click)='showRecipie($event)'>{{recipieText}}</button>
+
+    <button class='input-remove' value='3' (click)='removeItemList($event)'>Remove All Recipes</button>
+
+    <h3 class='input-title'>RECIPIE LIST:</h3>
+    
+    <div *ngFor='let value of textvalue;let i=index'>
+      <button class='input-button' value='10' (click)='recipeList($event)'>{{value.text}}</button>
+      
+    </div>
+  </div>
+
+
+
+</div>

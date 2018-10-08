@@ -1,0 +1,7 @@
+<div class="app-row">
+
+  <app-input (clicklist)="clickList($event)" (onButtonClick)='clickButton($event)' [textvalue]='textArray' (onRemoveItem)='removeItemList($event)' (showRecipieList)='ShowRecipieList($event)'></app-input>
+
+  <app-output [Condition]='eventValue' (TextValue)='textValue($event)' (condition)='checkCondition($event)' [ListArray]='listArr'   (outputListDeleteArray)='deleteArray($event)' [showArr]='showArray'  (ShowArrDelete)='deleteShowArray($event)'></app-output>
+
+</div>
